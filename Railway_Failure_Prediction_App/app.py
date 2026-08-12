@@ -6,11 +6,10 @@ import pickle
 lr = pickle.load(open('lr.pkl','rb'))
 dt = pickle.load(open('dt.pkl','rb'))
 rf = pickle.load(open('rf.pkl','rb'))
-#knn = pickle.load(open('knn.pkl','rb'))
 
 
 model = st.sidebar.selectbox('Select the Model',['Decision Tree','Random Forest',
-                                                 'Logistic Reg','KNN_Classifier'])
+                                                 'Logistic Reg'])
 
 
 st.header('Railway Failure Type Prediction')
