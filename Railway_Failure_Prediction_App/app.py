@@ -1,12 +1,19 @@
 import streamlit as st
 import pandas as pd
 import numpy as np
+from pathlib import Path
 import pickle
 
-lr = pickle.load(open('lr.pkl','rb'))
-dt = pickle.load(open('dt.pkl','rb'))
-rf = pickle.load(open('rf.pkl','rb'))
+BASE_DIR = Path(__file__).resolve().parent.parent
 
+with open(BASE_DIR / 'lr.pkl', 'rb') as f:
+    lr = pickle.load(f)
+
+with open(BASE_DIR / 'dt.pkl', 'rb') as f:
+    dt = pickle.load(f)
+
+with open(BASE_DIR / 'rf.pkl', 'rb') as f:
+    rf = pickle.load(f)
 
 model = st.sidebar.selectbox('Select the Model',['Decision Tree','Random Forest',
                                                  'Logistic Reg'])
