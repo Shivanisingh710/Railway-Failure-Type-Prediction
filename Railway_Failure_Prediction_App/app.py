@@ -4,7 +4,7 @@ import numpy as np
 from pathlib import Path
 import pickle
 
-BASE_DIR = Path(__file__).resolve().parent.parent
+BASE_DIR = Path(__file__).resolve().parent
 
 with open(BASE_DIR / 'lr.pkl', 'rb') as f:
     lr = pickle.load(f)
